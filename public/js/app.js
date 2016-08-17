@@ -1,10 +1,10 @@
 
 $(document).ready(function(){
 	$('.toggle').on('click', function() {
-	  $('.container').stop().addClass('active');
+	  $('.login-form').stop().addClass('active');
 	});
 
 	$('.close').on('click', function() {
-	  $('.container').stop().removeClass('active');
+	  $('.login-form').stop().removeClass('active');
 	});
 });

@@ -1,26 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-      <div class="card"></div>
+    <div class="login-form">
       <div class="card">
+          
+      </div>
+      <div class="card">
+
         <h1 class="title">Login</h1>
          <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
             {{ csrf_field() }}
-          <div class="input-container">
+        <div class="input-container">
             <input type="text" id="email" name="email" required="required">
             <label for="email">Email</label>
             <div class="bar"></div>
-          </div>
-          <div class="input-container">
+        </div>
+        <div class="input-container">
             <input type="password" id="password" name="password" required="required">
             <label for="password">Password</label>
             <div class="bar"></div>
-          </div>
-          <div class="button-container">
+        </div>
+        <div class="checkbox rememberme">
+            <input type="checkbox" name="remember"/> &nbsp; Remember me
+        </div>
+        <div class="button-container">
             <button type="submit"><span>Go</span></button>
-          </div>
-          <div class="footer"><a href="#">Forgot your password?</a></div>
+        </div>
+        <div class="button-social">
+            <button class="ui facebook button">
+              <i class="facebook icon"></i>
+              Facebook
+            </button>
+            <button class="ui twitter button">
+              <i class="twitter icon"></i>
+              Twitter
+            </button>
+            <button class="ui google plus button">
+              <i class="google plus icon"></i>
+              Google Plus
+            </button>
+        </div>
+        <div class="footer"><a href="#">Forgot your password?</a></div>
         </form>
       </div>
       <div class="card alt">

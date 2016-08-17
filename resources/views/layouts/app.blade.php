@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/semantic.min.css') }}" rel="stylesheet">
 
     <style>
         body {
@@ -26,33 +27,77 @@
     </style>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <div class="ui fixed inverted menu">
+        <div class="ui container">
+          <a href="#" class="header item ct-header">
+          <!--   <img class="logo" src="{{ asset('images/icon') }}"> -->
+            FOOTBALL NEWS
+          </a>
+            <a href="{{ url('/home') }}" class="item"><i class="home icon"></i>&nbsp;Home</a>
+            <a href="{{ url('/home') }}" class="item"><i class="newspaper icon"></i>&nbsp;News</a>
+            <div class="ui search item">
+              <div class="ui icon input">
+                <input class="prompt" type="text" placeholder="Search...">
+                <i class="search icon"></i>
+              </div>
+              <div class="results"></div>
+            </div>
+            <!-- <div class="ui simple dropdown item">
+                Dropdown <i class="dropdown icon"></i>
+                <div class="menu">
+                  <a class="item" href="#">Link Item</a>
+                  <a class="item" href="#">Link Item</a>
+                  <div class="divider"></div>
+                  <div class="header">Header Item</div>
+                  <div class="item">
+                    <i class="dropdown icon"></i>
+                    Sub Menu
+                    <div class="menu">
+                      <a class="item" href="#">Link Item</a>
+                      <a class="item" href="#">Link Item</a>
+                    </div>
+                  </div>
+                  <a class="item" href="#">Link Item</a>
+                </div>
+            </div> -->
+            <div class="right item">
+                @if(Auth::guest())
+                <a class="item" href="{{ url('/login') }}" class="ui inverted button"><i class="sign in icon"></i>&nbsp;Log in</a>
+                @else
+                <div class="ui simple dropdown item">
+                    {{ Auth::user()->name }}  <i class="dropdown icon"></i>
+                    <div class="menu">
+                       <a class="item" href="{{ url('/logout') }}" class="ui inverted button"><i class="sign out icon"></i>&nbsp;Log out</a>
+                      <a class="item" href="#"><i class="user icon"></i>&nbsp;Profile</a>
+                      <a class="item" href="#"><i class="flag outline icon"></i>&nbsp;Languages</a>
+                    </div>
+                </div>
+               
+                @endif
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-
-                <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                     <span class="sr-only">Toggle Navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-
-                <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Laravel
                 </a>
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
                 </ul>
-
-                <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
@@ -70,7 +115,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     @yield('content')
 
@@ -78,5 +123,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <link href="{{ asset('js/semantic.min.js') }}" rel="stylesheet">
 </body>
 </html>

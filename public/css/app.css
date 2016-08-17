@@ -7,6 +7,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#app-layout{
+  background: #d4d4d5;
+}
+
 /* Pen Title */
 .pen-title {
   padding: 50px 0;
@@ -31,20 +35,22 @@
 }
 
 /* Container */
-.container {
+.login-form {
   position: relative;
-  max-width: 460px;
+  max-width: 400px;
   width: 100%;
+  left : 32%;
+  top : 13%;
 }
-.container.active .card:first-child {
+.login-form.active .card:first-child {
   background: #f2f2f2;
   margin: 0 15px;
 }
-.container.active .card:nth-child(2) {
+.login-form.active .card:nth-child(2) {
   background: #fafafa;
   margin: 0 10px;
 }
-.container.active .card.alt {
+.login-form.active .card.alt {
   top: 20px;
   right: 0;
   width: 100%;
@@ -54,7 +60,7 @@
   padding: 60px 0 40px;
   overflow: hidden;
 }
-.container.active .card.alt .toggle {
+.login-form.active .card.alt .toggle {
   position: absolute;
   top: 40px;
   right: -70px;
@@ -66,35 +72,35 @@
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
 }
-.container.active .card.alt .toggle:before {
+.login-form.active .card.alt .toggle:before {
   content: '';
 }
-.container.active .card.alt .title,
-.container.active .card.alt .input-container,
-.container.active .card.alt .button-container {
+.login-form.active .card.alt .title,
+.login-form.active .card.alt .input-container,
+.login-form.active .card.alt .button-container {
   left: 0;
   opacity: 1;
   visibility: visible;
   -webkit-transition: .3s ease;
   transition: .3s ease;
 }
-.container.active .card.alt .title {
+.login-form.active .card.alt .title {
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
 }
-.container.active .card.alt .input-container {
+.login-form.active .card.alt .input-container {
   -webkit-transition-delay: .4s;
           transition-delay: .4s;
 }
-.container.active .card.alt .input-container:nth-child(2) {
+.login-form.active .card.alt .input-container:nth-child(2) {
   -webkit-transition-delay: .5s;
           transition-delay: .5s;
 }
-.container.active .card.alt .input-container:nth-child(3) {
+.login-form.active .card.alt .input-container:nth-child(3) {
   -webkit-transition-delay: .6s;
           transition-delay: .6s;
 }
-.container.active .card.alt .button-container {
+.login-form.active .card.alt .button-container {
   -webkit-transition-delay: .7s;
           transition-delay: .7s;
 }
@@ -126,16 +132,20 @@
   position: relative;
   z-index: 1;
   border-left: 5px solid #ed2553;
-  margin: 0 0 35px;
+  margin: -20px 0 35px;
   padding: 10px 0 10px 50px;
   color: #ed2553;
   font-size: 32px;
   font-weight: 600;
   text-transform: uppercase;
 }
+.card .rememberme {
+    margin: -45px 0 0px 80px;
+    position: absolute;
+}
 .card .input-container {
   position: relative;
-  margin: 0 60px 50px;
+  margin: -15px 60px 50px;
 }
 .card .input-container input {
   outline: none;
@@ -198,8 +208,12 @@
   right: 50%;
 }
 .card .button-container {
-  margin: 0 60px;
+  margin: -4px 60px 30px;
   text-align: center;
+}
+
+.card .button-social {
+  margin-left: 7px;
 }
 .card .button-container button {
   outline: 0;
@@ -207,9 +221,9 @@
   position: relative;
   display: inline-block;
   background: 0;
-  width: 240px;
+  width: 280px;
   border: 2px solid #e3e3e3;
-  padding: 20px 0;
+  padding: 10px 0;
   font-size: 24px;
   font-weight: 600;
   line-height: 1;
@@ -255,7 +269,7 @@
   transform: scale(10);
 }
 .card .footer {
-  margin: 40px 0 0;
+  margin: 20px 0 0;
   color: #d3d3d3;
   font-size: 24px;
   font-weight: 300;
@@ -273,7 +287,7 @@
 .card.alt {
   position: absolute;
   top: 40px;
-  right: -95px;
+  right: -110px;
   z-index: 10;
   width: 140px;
   height: 140px;
@@ -296,13 +310,13 @@
   border-radius: 100%;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   color: #ffffff;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 60px;
   text-align: center;
   cursor: pointer;
 }
 .card.alt .toggle:before {
-  content: '\f040';
+  content: '\f234';
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -368,6 +382,12 @@
 }
 .card.alt .button-container button:active:before, .card.alt .button-container button:focus:before {
   display: none;
+}
+
+.ct-header {
+    font-weight: bold;
+    font-size: 20px;
+    color : #94c2ea !important;
 }
 
 /* Keyframes */
